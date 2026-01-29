@@ -1,0 +1,83 @@
+{
+  "mcpServers": {
+    "github-personal": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": ""
+      }
+    },
+    "github-work": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": ""
+      }
+    },
+    "gitlab": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-gitlab"],
+      "env": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": "",
+        "GITLAB_API_URL": "https://gitlab.com/api/v4"
+      }
+    },
+    "atlassian-luffydesign": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://mcp.atlassian.com/v1/sse"],
+      "env": {
+        "ATLASSIAN_SITE_NAME": "luffydesign",
+        "ATLASSIAN_USER_EMAIL": "",
+        "ATLASSIAN_API_TOKEN": ""
+      }
+    },
+    "atlassian-fxtec": {
+      "command": "npx",
+      "args": ["mcp-remote", "https://mcp.atlassian.com/v1/sse"],
+      "env": {
+        "ATLASSIAN_SITE_NAME": "fxtec",
+        "ATLASSIAN_USER_EMAIL": "",
+        "ATLASSIAN_API_TOKEN": ""
+      }
+    },
+    "postman-luffydesign": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/postman-mcp-server"],
+      "headers": {
+        "Authorization": ""
+      }
+    },
+    "postman-rapidlink": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/postman-mcp-server"],
+      "headers": {
+        "Authorization": ""
+      }
+    },
+    "plane": {
+      "command": "uvx",
+      "args": ["plane-mcp-server", "stdio"],
+      "env": {
+        "PLANE_API_KEY": "",
+        "PLANE_WORKSPACE_SLUG": "",
+        "PLANE_BASE_URL": ""
+      }
+    },
+    "vercel": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.vercel.com/sse"]
+    },
+    "supabase": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.supabase.com/mcp"]
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "gdrive": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-gdrive"]
+    }
+  }
+}

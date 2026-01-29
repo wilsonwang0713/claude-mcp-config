@@ -1,0 +1,5 @@
+# Local settings with sensitive data (API keys, tokens)
+settings.local.json
+
+# OS files
+.DS_Store

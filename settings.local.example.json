@@ -1,0 +1,60 @@
+{
+  "mcpServers": {
+    "github-personal": {
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<your-personal-github-token>"
+      }
+    },
+    "github-work": {
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<your-work-github-token>"
+      }
+    },
+    "gitlab": {
+      "env": {
+        "GITLAB_PERSONAL_ACCESS_TOKEN": "<your-gitlab-personal-access-token>"
+      }
+    },
+    "atlassian-luffydesign": {
+      "env": {
+        "ATLASSIAN_USER_EMAIL": "<your-email@example.com>",
+        "ATLASSIAN_API_TOKEN": "<your-atlassian-api-token>"
+      }
+    },
+    "atlassian-fxtec": {
+      "env": {
+        "ATLASSIAN_USER_EMAIL": "<your-email@example.com>",
+        "ATLASSIAN_API_TOKEN": "<your-atlassian-api-token>"
+      }
+    },
+    "postman-luffydesign": {
+      "headers": {
+        "Authorization": "Bearer <your-postman-api-key>"
+      }
+    },
+    "postman-rapidlink": {
+      "headers": {
+        "Authorization": "Bearer <your-postman-api-key>"
+      }
+    },
+    "plane": {
+      "env": {
+        "PLANE_API_KEY": "<your-plane-api-key>",
+        "PLANE_WORKSPACE_SLUG": "<your-workspace-slug>",
+        "PLANE_BASE_URL": "<https://your-plane-instance.com>"
+      }
+    },
+    "vercel": {
+      "_comment": "Uses OAuth - no API key needed, will redirect to login"
+    },
+    "supabase": {
+      "_comment": "Uses OAuth - no API key needed, will redirect to login"
+    },
+    "memory": {
+      "_comment": "No API key needed - stores data locally"
+    },
+    "gdrive": {
+      "_comment": "Uses OAuth - will redirect to Google login on first use"
+    }
+  }
+}
