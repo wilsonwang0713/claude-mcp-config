@@ -52,8 +52,10 @@ A curated collection of MCP (Model Context Protocol) server configurations for [
 ├── settings.json               # Base MCP server configurations
 ├── settings.local.json         # Your credentials (git-ignored)
 ├── settings.local.example.json # Template for credentials
-└── sync-to-claude.sh           # Sync script to merge configs
+└── sync-to-claude.sh           # Sync script to merge configs → ~/.claude.json
 ```
+
+> **Note:** Claude Code reads MCP server configurations from `~/.claude.json`, not `~/.claude/settings.json`. The sync script merges your settings into the correct location while preserving other Claude Code settings.
 
 ### Adding a New MCP Server
 
@@ -140,8 +142,10 @@ A curated collection of MCP (Model Context Protocol) server configurations for [
 ├── settings.json               # 基本 MCP 伺服器配置
 ├── settings.local.json         # 您的憑證（已加入 git-ignore）
 ├── settings.local.example.json # 憑證範本
-└── sync-to-claude.sh           # 同步腳本，合併設定檔
+└── sync-to-claude.sh           # 同步腳本，合併設定到 ~/.claude.json
 ```
+
+> **注意：** Claude Code 從 `~/.claude.json` 讀取 MCP 伺服器設定，而非 `~/.claude/settings.json`。同步腳本會將您的設定合併到正確的位置，同時保留 Claude Code 的其他既有設定。
 
 ### 新增 MCP 伺服器
 
