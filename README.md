@@ -27,9 +27,10 @@ A curated collection of MCP (Model Context Protocol) server configurations for [
 
 ### Installation
 
-1. Clone this repository to your Claude configuration directory:
+1. Clone this repository:
    ```bash
-   git clone https://github.com/wilsonwang0713/claude-mcp-config.git ~/.claude
+   git clone https://github.com/wilsonwang0713/claude-mcp-config.git ~/antigravity/Claude-mcp
+   cd ~/antigravity/Claude-mcp
    ```
 
 2. Copy the example file and add your credentials:
@@ -39,14 +40,49 @@ A curated collection of MCP (Model Context Protocol) server configurations for [
 
 3. Edit `settings.local.json` with your API keys and tokens.
 
+4. Run the sync script to apply settings:
+   ```bash
+   ./sync-to-claude.sh
+   ```
+
 ### File Structure
 
 ```
 .
-├── settings.json              # Base MCP server configurations
-├── settings.local.json        # Your credentials (git-ignored)
-└── settings.local.example.json # Template for credentials
+├── settings.json               # Base MCP server configurations
+├── settings.local.json         # Your credentials (git-ignored)
+├── settings.local.example.json # Template for credentials
+└── sync-to-claude.sh           # Sync script to merge configs
 ```
+
+### Adding a New MCP Server
+
+1. Add the server configuration to `settings.json` (with empty credentials):
+   ```json
+   "new-server": {
+     "command": "npx",
+     "args": ["-y", "@org/server-package"],
+     "env": {
+       "API_KEY": ""
+     }
+   }
+   ```
+
+2. Add your credentials to `settings.local.json`:
+   ```json
+   "new-server": {
+     "env": {
+       "API_KEY": "your-actual-api-key"
+     }
+   }
+   ```
+
+3. Run the sync script:
+   ```bash
+   ./sync-to-claude.sh
+   ```
+
+4. Restart Claude Code to load the new server.
 
 ### Security
 
@@ -79,9 +115,10 @@ A curated collection of MCP (Model Context Protocol) server configurations for [
 
 ### 安裝方式
 
-1. 將此儲存庫複製到您的 Claude 設定目錄：
+1. 複製此儲存庫：
    ```bash
-   git clone https://github.com/wilsonwang0713/claude-mcp-config.git ~/.claude
+   git clone https://github.com/wilsonwang0713/claude-mcp-config.git ~/antigravity/Claude-mcp
+   cd ~/antigravity/Claude-mcp
    ```
 
 2. 複製範例檔案並新增您的憑證：
@@ -91,14 +128,49 @@ A curated collection of MCP (Model Context Protocol) server configurations for [
 
 3. 編輯 `settings.local.json`，填入您的 API 金鑰和 Token。
 
+4. 執行同步腳本以套用設定：
+   ```bash
+   ./sync-to-claude.sh
+   ```
+
 ### 檔案結構
 
 ```
 .
-├── settings.json              # 基本 MCP 伺服器配置
-├── settings.local.json        # 您的憑證（已加入 git-ignore）
-└── settings.local.example.json # 憑證範本
+├── settings.json               # 基本 MCP 伺服器配置
+├── settings.local.json         # 您的憑證（已加入 git-ignore）
+├── settings.local.example.json # 憑證範本
+└── sync-to-claude.sh           # 同步腳本，合併設定檔
 ```
+
+### 新增 MCP 伺服器
+
+1. 在 `settings.json` 新增伺服器設定（憑證留空）：
+   ```json
+   "new-server": {
+     "command": "npx",
+     "args": ["-y", "@org/server-package"],
+     "env": {
+       "API_KEY": ""
+     }
+   }
+   ```
+
+2. 在 `settings.local.json` 新增您的憑證：
+   ```json
+   "new-server": {
+     "env": {
+       "API_KEY": "your-actual-api-key"
+     }
+   }
+   ```
+
+3. 執行同步腳本：
+   ```bash
+   ./sync-to-claude.sh
+   ```
+
+4. 重新啟動 Claude Code 以載入新伺服器。
 
 ### 安全性說明
 
